@@ -1,8 +1,27 @@
 import os
 
 
-def cmd_clear(_):
+def cmd_clear(*_):
     os.system("cls")
 
 
-commands = {"clear": cmd_clear}
+def cmd_ls(*_):
+    files = os.listdir()
+    files.sort()
+    for file in files:
+        if os.path.isdir(file):
+            print(f"{file}/")
+            continue
+        print(file)
+
+
+def cmd_cd(_, args):
+    try:
+        os.chdir(args[0])
+    except FileNotFoundError:
+        print(f"'{args[0]}': Not a directory")
+    except Exception as e:
+        print(f"'cd': '{e}'")
+
+
+commands = {"clear": cmd_clear, "ls": cmd_ls, "cd": cmd_cd}

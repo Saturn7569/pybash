@@ -1,5 +1,5 @@
 def get_config(conf, section, name, default):
-    if name not in conf:
+    if section not in conf:
         return default
     if name in conf[section]:
         return conf[section][name]

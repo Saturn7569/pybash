@@ -32,11 +32,11 @@ while True:
         continue
 
     if parsed_txt[0] in commands:
-        commands[parsed_txt[0]](config)
+        commands[parsed_txt[0]](config, parsed_txt[1:])
         continue
 
     if alias_exists(config, parsed_txt[0]):
-        commands[get_alias(config, parsed_txt[0])](config)
+        commands[get_alias(config, parsed_txt[0])](config, parsed_txt[1:])
         continue
 
     print(f"'{parsed_txt[0]}': Not a command")
