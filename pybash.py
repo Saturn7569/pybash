@@ -15,7 +15,10 @@ if os.path.exists("pybash.toml"):
             sys.exit(1)
 
 
-os.chdir(get_config(config, "base", "start_dir", "C:/"))
+try:
+    os.chdir(get_config(config, "base", "start_dir", "C:/"))
+except Exception as e:
+    print(f"Error while loading config: '{e}'")
 
 while True:
     currend_dir = os.getcwd().replace("\\", "/")
