@@ -15,6 +15,10 @@ def cmd_ls(*_):
         print(file)
 
 
+def cmd_sudo(_, args):
+    os.system(" ".join(args))
+
+
 def cmd_cd(_, args):
     try:
         os.chdir(args[0])
@@ -24,4 +28,4 @@ def cmd_cd(_, args):
         print(f"'cd': '{e}'")
 
 
-commands = {"clear": cmd_clear, "ls": cmd_ls, "cd": cmd_cd}
+commands = {"clear": cmd_clear, "ls": cmd_ls, "cd": cmd_cd, "sudo": cmd_sudo}

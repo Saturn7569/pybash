@@ -27,15 +27,14 @@ while True:
     if inp == "exit":
         break
 
-    if inp.startswith("sudo "):
-        os.system(inp[len("sudo ") :])
-        continue
-
     if parsed_txt[0] in commands:
         commands[parsed_txt[0]](config, parsed_txt[1:])
         continue
 
-    if alias_exists(config, parsed_txt[0]) and parsed_txt[0] in commands:
+    if (
+        alias_exists(config, parsed_txt[0])
+        and get_alias(config, parsed_txt[0]) in commands
+    ):
         commands[get_alias(config, parsed_txt[0])](config, parsed_txt[1:])
         continue
 
