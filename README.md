@@ -5,14 +5,20 @@ A python bash toy I made because I was bored...
 ## Installing
 
 First clone this repository into you computer.
-You need to have python installed because I don't have a stable build yet
+You need to have python installed because I don't have a stable build yet.
 Now cd into the directory and run these commands:
 
 ```sh
-pip install -r requirements.txt
+pip install uv
 ```
 
-This will install the [`uv`](https://github.com/astral-sh/uv) package and `toml` to open the config file
+This will install the [uv](https://github.com/astral-sh/uv) package
+
+Now using [uv](https://github.com/astral-sh/uv) make sure you intstalled the dependencies:
+
+```sh
+uv add -r requirements.txt
+```
 
 ### Running
 
