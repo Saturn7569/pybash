@@ -22,7 +22,6 @@ def parse_command(cmd):
 
     return tokens
 
-
 def format_token(tok):
     if not tok:
         return None

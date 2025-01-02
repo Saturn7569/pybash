@@ -14,7 +14,6 @@ if os.path.exists("pybash.toml"):
             print(f"Error while loading config: '{e}'")
             sys.exit(1)
 
-
 try:
     os.chdir(get_config(config, "base", "start_dir", "C:/"))
 except Exception as e:

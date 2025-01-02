@@ -5,12 +5,10 @@ def get_config(conf, section, name, default):
         return conf[section][name]
     return default
 
-
 def alias_exists(conf, name):
     if "alias" not in conf:
         return False
     return name in conf["alias"]
-
 
 def get_alias(conf, name):
     if "alias" not in conf:
