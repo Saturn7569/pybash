@@ -1,7 +1,7 @@
 import os
 
 def cmd_clear(*_):
-    os.system("cls")
+    print("\033[2J\033[H", end="")
 
 def cmd_ls(*_):
     files = os.listdir()
