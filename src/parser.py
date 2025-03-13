@@ -6,19 +6,13 @@ def parse_command(cmd):
     for c in cmd:
         # print(c, current_token)
         if c in " \t\n" and current_token:
-            tok = current_token
-            if not tok:
-                return None
-            tokens.append(tok)
+            tokens.append(current_token)
             current_token = ""
             continue
         current_token += c
 
     if current_token:
-        tok = current_token
-        if not tok:
-            return None
-        tokens.append(tok)
+        tokens.append(current_token)
 
     return tokens
 
